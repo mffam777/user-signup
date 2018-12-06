@@ -7,7 +7,7 @@
 # Due date: December 17, 2018 @ 21:00
 
 # import modules for ther project
-from flask import Flask
+from flask import Flask, request, redirect
 import os
 import jinja2
 
