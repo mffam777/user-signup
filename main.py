@@ -22,8 +22,6 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 
-
-
 @app.route('/')
 # In the index function, create a template variable that holds the template 
 # returned from Jinja's get_template function and then return the string that 
@@ -32,6 +30,13 @@ def index():
     template = jinja_env.get_template('form.html')
     return template.render()
 
+# add function, but this time pass an argument to template.render that matches a 
+# placeholder called name
+@app.route('/')
+def hello():
+    first_name = request.form['first_name']
+    template = jinja_env.get_template('feedback.html')
+    return template.render(name=first_name)
 
 app.run()
 
