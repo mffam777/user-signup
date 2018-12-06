@@ -32,8 +32,8 @@ def index():
 
 # add function, but this time pass an argument to template.render that matches a 
 # placeholder called name
-@app.route('/')
-def hello():
+@app.route('/user_signedup', method='POST')
+def user_signedup():
     first_name = request.form['first_name']
     template = jinja_env.get_template('feedback.html')
     return template.render(name=first_name)
