@@ -109,3 +109,7 @@ venv.bak/
 # exclude folder
 GIT_DIR C:\Users\alber\lc101\user-signup\exclude
 dir_to_ignore/lc101/user-signup/exclude
+
+# Temporary files
+.xlsx
+.pdf
