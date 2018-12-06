@@ -21,12 +21,16 @@ jinja_env = jinja2.Environment(
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-@app.route('/')
 
 
+
 @app.route('/')
+# In the index function, create a template variable that holds the template 
+# returned from Jinja's get_template function and then return the string that 
+# template.render()
 def index():
-    return ""
+    template = jinja_env.get_template('form.html')
+    return template.render()
 
 
 app.run()
