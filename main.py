@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # School: Launch Code
 # Class: LC101 Ft. Meade F18
 # Student: Alberto Morales
@@ -10,6 +12,12 @@
 from flask import Flask, request, redirect
 import os
 import jinja2
+
+#DELETE
+# from flask_wtf import FlaskForm
+# from wtforms import StringField, PasswordField, BooleanField, SubmitField
+# from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+# from app.models import User
 
 # add absolute path in the filesystem on which the program is running.
 template_dir = os.path.join(os.path.dirname(__file__),
@@ -32,11 +40,11 @@ def index():
 
 # add function, but this time pass an argument to template.render that matches a 
 # placeholder called name
-@app.route('/user', method='POST')
-def user():
-    first_name = request.form['first_name']
-    template = jinja_env.get_template('feedback.html')
-    return template.render(name=first_name)
+# @app.route('/form', methods='POST')
+# def form():
+    #first_name = request.form['first_name']
+    #template = jinja_env.get_template('feedback.html')
+    #return template.render(name=first_name)
 
 app.run()
 
