@@ -21,7 +21,7 @@ template_dir = os.path.join(os.path.dirname(__file__),
                             'templates')
 # initialize jinja templating engine
 jinja_env = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(template_dir))
+    loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
