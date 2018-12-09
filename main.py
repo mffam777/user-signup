@@ -10,6 +10,7 @@
 
 # import modules for ther project
 from flask import Flask, request, redirect
+import cgi
 import os
 import jinja2
 
