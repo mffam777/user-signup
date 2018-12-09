@@ -14,11 +14,7 @@ import cgi
 import os
 import jinja2
 
-#DELETE
-# from flask_wtf import FlaskForm
-# from wtforms import StringField, PasswordField, BooleanField, SubmitField
-# from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
-# from app.models import User
+
 
 # add absolute path in the filesystem on which the program is running.
 template_dir = os.path.join(os.path.dirname(__file__),
