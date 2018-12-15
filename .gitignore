@@ -113,3 +113,6 @@ dir_to_ignore/lc101/user-signup/exclude
 # Temporary files
 .xlsx
 .pdf
+
+#note pad file 
+*.txt
