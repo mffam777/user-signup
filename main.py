@@ -20,11 +20,11 @@ app = Flask(__name__)
 
 
 
-# Map url to signup.html
+# Map url to index.html.html
 
 @app.route('/')
 def index():
-    return render_template("signup.html")
+    return render_template("index.html")
 
 
 # statement app.run runs the app on local server
