@@ -20,14 +20,13 @@ app = Flask(__name__)
 
 
 
-# Map url to index.html.html
-
+# Map index.html to main.py 
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
-# feedback
+# Map feedback to main.py
 @app.route("/feedback")
 def feedback():
     return render_template("feedback.html")
