@@ -10,6 +10,7 @@
 
 # import modules need it for the project
 from flask import Flask, render_template, request, redirect
+from forms import SignupForm
 import cgi
 import os
 import jinja2
@@ -19,17 +20,33 @@ import jinja2
 app = Flask(__name__)
 
 
-
 # Map index.html to main.py 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-
 # Map feedback to main.py
+
+
 @app.route("/feedback")
 def feedback():
     return render_template("feedback.html")
+
+
+@app.route("/signup", methods=['GET', 'POST'])
+def signup():
+    form = SignupForm()
+
+    if request.method == 'POST':
+        return "Success!"
+
+    elif request.method == 'GET':
+        return render_template("signup.html", form=form)
+
+
+
+
+
 
 
 
