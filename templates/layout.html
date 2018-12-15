@@ -1,0 +1,22 @@
+<!--This is base templete, chile html file will inherate template from layout.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="{{ url_for('static', filename='css/stylesheet.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="title">Learning Flask</h1>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>
