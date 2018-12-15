@@ -22,9 +22,16 @@ app = Flask(__name__)
 
 # Map url to index.html.html
 
-@app.route('/')
+@app.route("/")
 def index():
     return render_template("index.html")
+
+
+# feedback
+@app.route("/feedback")
+def feedback():
+    return render_template("feedback.html")
+
 
 
 # statement app.run runs the app on local server
