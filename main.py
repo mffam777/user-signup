@@ -8,42 +8,31 @@
 # Assignment: user_signedup
 # Due date: December 17, 2018 @ 21:00
 
-# import modules for ther project
-from flask import Flask, request, redirect
+# import modules need it for the project
+from flask import Flask, render_template, request, redirect
 import cgi
 import os
 import jinja2
 
 
 
-# add absolute path in the filesystem on which the program is running.
-template_dir = os.path.join(os.path.dirname(__file__),
-                            'templates')
-# initialize jinja templating engine
-jinja_env = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
-
 app = Flask(__name__)
-app.config['DEBUG'] = True
 
+
+
+# Map url to signup.html
 
 @app.route('/')
-# In the index function, create a template variable that holds the template 
-# returned from Jinja's get_template function and then return the string that 
-# template.render()
 def index():
-    template = jinja_env.get_template('form.html')
-    return template.render()
+    return render_template("signup.html")
 
-# add function, but this time pass an argument to template.render that matches a 
-# placeholder called name
-# @app.route('/form', method='POST')
-# def form():
-    #first_name = request.form['first_name']
-    #template = jinja_env.get_template('feedback.html')
-    #return template.render(name=first_name)
 
-app.run()
+# statement app.run runs the app on local server
+#thr debug=True flag any error message along the way
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 
    
