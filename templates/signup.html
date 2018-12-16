@@ -11,54 +11,26 @@
         {{ form.hidden_tag() }}
       
         <div class="form-group">
-          {{ form.first_name.label }}
-      
-          {% if form.first_name.errors %}
-          {% for error in form.first_name.errors %}
-          <p class="error-message">{{ error }}</p>
-          {% endfor %}
-          {% endif %}
-      
-          {{ form.first_name }}
+          {{ form.user_name.label }}
+          {{ form.user_name }}
         </div>
-      
+        
         <div class="form-group">
-          {{ form.last_name.label }}
-      
-          {% if form.last_name.errors %}
-          {% for error in form.last_name.errors %}
-          <p class="error-message">{{ error }}</p>
-          {% endfor %}
-          {% endif %}
-      
-          {{ form.last_name }}
+          {{ form.user_password.label }}
+          {{ form.user_password }}
         </div>
-      
+        
         <div class="form-group">
-          {{ form.email.label }}
-      
-          {% if form.email.errors %}
-          {% for error in form.email.errors %}
-          <p class="error-message">{{ error }}</p>
-          {% endfor %}
-          {% endif %}
-      
-          {{ form.email }}
+          {{ form.user_vpwd.label }}
+          {{ form.user_vpwd }}
         </div>
-      
+
         <div class="form-group">
-          {{ form.password.label }}
-      
-          {% if form.password.errors %}
-          {% for error in form.password.errors %}
-          <p class="error-message">{{ error }}</p>
-          {% endfor %}
-          {% endif %}
-      
-          {{ form.password }}
+          {{ form.user_email.label }}
+          {{ form.user_email }}
         </div>
-      
-        {{ form.submit(class="btn-primary") }}
+
+        {{ from.submit(class="btn-promary") }}
     </form>
 
     </div>
