@@ -6,6 +6,8 @@
        <h2>User Signup</h2>
 
       <form method="POST" action="/signup">
+        <!--Form object to generate the rest of the form, 
+          hidden tag to protect against CSRF attacks-->
         {{ form.hidden_tag() }}
       
         <div class="form-group">

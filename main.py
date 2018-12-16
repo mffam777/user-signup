@@ -33,7 +33,7 @@ def feedback():
     return render_template("feedback.html")
 
 
-@app.route("/signup", methods=['GET', 'POST'])
+@app.route("/signup", methods=['GET','POST'])
 def signup():
     form = SignupForm()
 
