@@ -16,11 +16,7 @@ from flask_wtf import FlaskForm
 import sys
 import jinja2
 
-#from wtforms.fields.html5 import EmailField
-#from email_validator import validate_email, EmailNotValidError
 
-#import cgi
-#import os
 
 
 
@@ -50,11 +46,7 @@ class SignupForm(FlaskForm):
 
     submit = SubmitField('Sign up')
 
-#@app.route('/')
-#def valid_email():
 
-    #if len(StringField) < 3:
-        #raise ValidationError('Invalid Email')
 
 
 @app.route("/index", methods=['GET','POST'])
