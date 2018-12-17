@@ -10,39 +10,55 @@
 
 # import modules need it for the project
 from flask import Flask, render_template, request, redirect
-from forms import SignupForm
+
+from wtforms.validators import InputRequired, Email, Length
+from wtforms import StringField, PasswordField, SubmitField
 import cgi
 import os
 import jinja2
 
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import InputRequired, Email, Length, DataRequired
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'development-key'
 
 
-# Map index.html to main.py 
-@app.route("/")
-def index():
-    return render_template("index.html")
+class SignupForm(FlaskForm):
+    #pending check
+    username = StringField('username', validators=[
+                       InputRequired("A username is require!")])
 
-# Map feedback to main.py
+    password = PasswordField('password', validators=[InputRequired(
+        "Password is require!"), validators.EqualTo('confirm', message='Passwords must match')])
+
+    confirm = PasswordField('Repeat Password')
+
+    email = StringField('E-mail', validators=[InputRequired(
+        "Please enter your E-mail address."), Email("Please enter your email address.")])
+
+    submit = SubmitField('Sign up')
 
 
-@app.route("/feedback")
-def feedback():
-    return render_template("feedback.html")
 
-
-@app.route("/signup", methods=['GET','POST'])
+@app.route("/index", methods=['GET','POST'])
 def signup():
+
     form = SignupForm()
 
-    if request.method == 'POST':
-        return "Success!"
+    if form.validate_on_submit():
+        return 'Sumitted!'
 
-    elif request.method == 'GET':
-        return render_template("signup.html", form=form)
+    return render_template('signup.html', form=form)
 
+
+
+
+
+###
+   
 
 
 
