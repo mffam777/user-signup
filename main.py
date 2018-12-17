@@ -10,16 +10,18 @@
 
 # import modules need it for the project
 from flask import Flask, render_template
-
-from wtforms.validators import InputRequired, DataRequiremed, Length,  Email, EqualTo
+from wtforms.validators import InputRequired, DataRequired, Length,  Email, EqualTo, Optional, AnyOf
 from wtforms import StringField, PasswordField, SubmitField, Form, validators
-from wtforms.fields.html5 import EmailField
-from email_validator import validate_email, EmailNotValidError
 from flask_wtf import FlaskForm
-#import cgi
-#import os
 import sys
 import jinja2
+
+#from wtforms.fields.html5 import EmailField
+#from email_validator import validate_email, EmailNotValidError
+
+#import cgi
+#import os
+
 
 
 
@@ -43,12 +45,16 @@ class SignupForm(FlaskForm):
 
     confirm = PasswordField('Repeat Password')
 
-    email = StringField('Email', [validators.Optional(), validators.input_required('@')])
+    email = StringField(
+        'Email', [validators.Optional(strip_whitespace=True), AnyOf('@', message=None, values_formatter=None)])
 
     submit = SubmitField('Sign up')
 
+#@app.route('/')
+#def valid_email():
 
-
+    #if len(StringField) < 3:
+        #raise ValidationError('Invalid Email')
 
 
 @app.route("/index", methods=['GET','POST'])
