@@ -43,7 +43,7 @@ class SignupForm(FlaskForm):
 
     #email = StringField('E-mail')
     email = EmailField('Email address', [
-                       validators.DataRequired(), validators.Email()])
+                       validators.DataRequired(), validators.Email('Please enter a valid E-Mail')])
 
     submit = SubmitField('Sign up')
 
